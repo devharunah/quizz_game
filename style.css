@@ -1,0 +1,64 @@
+body{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#puzzle-container{
+    display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 columns */
+  grid-gap: 5px; /* spacing between tiles */
+  margin: 20px auto;
+  width: max-content;
+}
+.tile{
+  width: 100px;
+  height: 100px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Empty tile */
+.empty {
+  background-color: #ecf0f1;
+  cursor: default;
+}
+#shuffle{
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    color: white;
+    background-color: #3498db;
+}
+#instructions {
+  max-width: 400px;
+  margin: 0 auto 20px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+#instructions h2 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+#instructions ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#instructions li {
+  margin-bottom: 8px;
+  font-size: 1em;
+  color: #333;
+}
