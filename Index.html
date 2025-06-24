@@ -1,32 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuizGame</title>
-   <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Puzzle Game</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Sliding Puzzle Game</h1>
-    <div id="puzzle-container" >
+  <div class="header">
+    <h1>🧩 Enhanced Sliding Puzzle</h1>
+    <div class="game-stats">
+      <div class="stat">
+        <div class="stat-label">Moves</div>
+        <div class="stat-value" id="move-counter">0</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Time</div>
+        <div class="stat-value" id="timer">00:00</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Best Time</div>
+        <div class="stat-value" id="best-time">--:--</div>
+      </div>
     </div>
-    <button id="shuffle" >
-            Shuffle
-        </button>
-        <div  >
-            <div id="instructions">
-  <h2>How to Play</h2>
-  <ul>
-    <li>Your goal is to arrange the tiles in order from 1 to 8.</li>
-    <li>One tile space is empty—use it to slide tiles around.</li>
-    <li>Click on a tile next to the empty space to move it.</li>
-    <li>Click "Shuffle" to start a new game.</li>
-    <li>Win the game when all numbers are in the correct order!</li>
-  </ul>
-</div>
+  </div>
 
+  <div class="game-container">
+    <div id="puzzle-container"></div>
+    
+    <div class="controls">
+      <div class="control-group">
+        <h3>🎮 Game Controls</h3>
+        <button id="shuffle">🔀 New Game</button>
+        <button id="solve-hint">💡 Hint</button>
+        <button id="reset-stats">📊 Reset Stats</button>
+      </div>
+
+      <div class="control-group">
+        <h3>⚙️ Difficulty</h3>
+        <div class="difficulty-buttons">
+          <button class="difficulty-btn" data-difficulty="easy">🟢 Easy (3x3)</button>
+          <button class="difficulty-btn active" data-difficulty="medium">🟡 Medium (4x4)</button>
+          <button class="difficulty-btn" data-difficulty="hard">🔴 Hard (5x5)</button>
         </div>
+      </div>
+
+      <div class="control-group settings-panel">
+        <h3>🔧 Settings</h3>
+        <div class="setting-item">
+          <span>Sound Effects</span>
+          <div class="toggle-switch active" id="sound-toggle"></div>
+        </div>
+        <div class="setting-item">
+          <span>Animations</span>
+          <div class="toggle-switch active" id="animation-toggle"></div>
+        </div>
+        <div class="setting-item">
+          <span>Auto-Shuffle</span>
+          <div class="toggle-switch" id="auto-shuffle-toggle"></div>
+        </div>
+        <div class="setting-item">
+          <span>Volume</span>
+          <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="win-celebration" id="win-celebration">
+    <div class="win-message">
+      <h2>🎉 Congratulations!</h2>
+      <div class="win-stats" id="win-stats"></div>
+      <button onclick="closeWinDialog()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js" >
+  </script>
 </body>
-<script src="script.js" >
-</script>
 </html>
